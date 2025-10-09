@@ -1,42 +1,62 @@
-# === Python (Backend) ===
-# Virtual environment
+# === Python / Flask ===
 venv/
-backend/venv/
-.env
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Flask / build artifacts
-instance/
-*.log
-*.sqlite3
+*.pyc
+*.pyo
+*.pyd
 *.db
+instance/
+.env
+.env.*
 
-# === Node.js (Frontend) ===
+# === Node.js / React (Vite) ===
 node_modules/
 dist/
 build/
 .vite/
-frontend/node_modules/
-frontend/dist/
-frontend/build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# === System files ===
-.DS_Store
-Thumbs.db
-
-# === IDE / Editor ===
+# === VSCode & IDE ===
 .vscode/
 .idea/
 *.swp
-*.swo
 
-# === Dependency lock files (optional to ignore if regenerable) ===
-# Uncomment if needed
-# package-lock.json
-# yarn.lock
+# === System Files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Backend temporary / cache ===
+backend/__pycache__/
+backend/venv/
+backend/.pytest_cache/
+backend/.mypy_cache/
+
+# === Frontend temporary ===
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.eslintcache
+
+# === Logs & Reports ===
+*.log
+*.out
+*.err
+logs/
+report/
+
+# === Build & Temporary Folders ===
+tmp/
+temp/
+.cache/
+coverage/
 
 # === Misc ===
 *.bak
-*.tmp
+*.old
+*.zip
+*.tar
+*.gz
