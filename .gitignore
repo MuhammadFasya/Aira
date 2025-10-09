@@ -1,0 +1,42 @@
+# === Python (Backend) ===
+# Virtual environment
+venv/
+backend/venv/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask / build artifacts
+instance/
+*.log
+*.sqlite3
+*.db
+
+# === Node.js (Frontend) ===
+node_modules/
+dist/
+build/
+.vite/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === IDE / Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Dependency lock files (optional to ignore if regenerable) ===
+# Uncomment if needed
+# package-lock.json
+# yarn.lock
+
+# === Misc ===
+*.bak
+*.tmp
