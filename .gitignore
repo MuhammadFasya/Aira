@@ -35,6 +35,11 @@ backend/venv/
 backend/.pytest_cache/
 backend/.mypy_cache/
 
+# Ensure local venv and env files are ignored
+.env
+backend/.env
+backend/.venv/
+
 # === Frontend temporary ===
 frontend/node_modules/
 frontend/dist/

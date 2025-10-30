@@ -1,0 +1,19 @@
+# Standard requirements file (copied from requirement.txt)
+Flask==3.0.3
+Flask-Cors==4.0.0
+python-dotenv==1.0.1
+requests==2.32.3
+
+# Optional / future NLP (only install if needed)
+# transformers==4.44.0
+# torch==2.3.1
+# nltk==3.9
+# scikit-learn==1.5.2
+# textblob==0.18.0.post0
+
+# Optional data libs
+# pandas==2.2.2
+# numpy==1.26.4
+
+# Production server (optional)
+# gunicorn==23.0.0
