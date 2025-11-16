@@ -1,28 +1,39 @@
 import { useState } from "react";
 import { Menu, Plus, Search, History, Settings, User } from "lucide-react";
 
-export default function Sidebar({ onOpenSettings }) {
+export default function Sidebar({ onOpenSettings, onToggle }) {
   const [expanded, setExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setExpanded(!expanded);
+    onToggle(!expanded);
+  };
 
   return (
     <aside
-      className={`fixed top-0 left-0 h-screen ${
+      className={`absolute top-0 left-0 h-screen ${
         expanded ? "w-56" : "w-20"
-      } flex flex-col justify-between items-center bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300`}
+      } flex flex-col justify-between bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-500 ease-in-out z-40`}
     >
-      {/* Top */}
-      <div className="flex flex-col items-center mt-4 space-y-6 w-full">
+      {/* Top Section */}
+      <div
+        className={`flex flex-col ${
+          expanded ? "items-start" : "items-center"
+        } items-start mt-4 space-y-6 w-full px-4 mx-auto`}
+      >
         <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-gray-500 hover:text-blue-600"
+          onClick={handleToggle}
+          className={`text-gray-500 hover:text-blue-600 transition-all duration-500 ${
+            expanded ? "translate-x-40" : "translate-x-0"
+          }`}
         >
           <Menu size={22} />
         </button>
 
-        <div className="flex flex-col items-center w-full mt-8 space-y-6">
+        <div className="flex flex-col items-center w-full space-y-6 mt-4">
           <SidebarButton
             icon={<Plus size={22} />}
-            label="New Chat"
+            label="New"
             expanded={expanded}
           />
           <SidebarButton
@@ -38,8 +49,8 @@ export default function Sidebar({ onOpenSettings }) {
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="flex flex-col items-center mb-4 w-full space-y-6">
+      {/* Bottom Section */}
+      <div className="flex flex-col items-start mb-4 w-full space-y-6 px-4">
         <SidebarButton
           icon={<Settings size={22} />}
           label="Settings"
@@ -47,7 +58,7 @@ export default function Sidebar({ onOpenSettings }) {
           onClick={onOpenSettings}
         />
         <SidebarButton
-          icon={<User size={28} />}
+          icon={<User size={22} />}
           label="User"
           expanded={expanded}
         />
@@ -60,7 +71,9 @@ function SidebarButton({ icon, label, expanded, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-3 text-gray-500 hover:text-blue-600 w-full px-4"
+      className={`flex items-center gap-3 text-gray-500 hover:text-blue-600 transition-all duration-300 w-full ${
+        expanded ? "justify-start" : "justify-center"
+      }`}
     >
       {icon}
       {expanded && <span className="text-sm font-medium">{label}</span>}

@@ -2,8 +2,8 @@ export default function SettingModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/30 z-50">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 w-96 relative">
+    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-black/30 z-50 animate-fadeIn">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 w-96 relative transform animate-slideDown">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
           Settings ⚙️
         </h2>
